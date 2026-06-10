@@ -122,7 +122,9 @@ function enterDashboard() {
 
   loadAllProjects().then(() => {
     showView('dashboard');
-    loadDashboardStats();
+    loadAnalytics().then(() => {
+      loadDashboardStats();
+    });
   });
 }
 
@@ -636,13 +638,41 @@ async function confirmDelete() {
 /* ═══════════════════════════════════════════════
    ANALYTICS
 ═══════════════════════════════════════════════ */
-function loadAnalytics() {
-  // Attempt to load from Supabase visitor_logs if exists, else show demo data
-  $('statTotalVisitors').textContent   = visitorStats.total   || '—';
-  $('statUniqueVisitors').textContent  = visitorStats.unique  || '—';
-  $('statDailyVisitors').textContent   = visitorStats.daily   || '—';
-  $('statWeeklyVisitors').textContent  = visitorStats.weekly  || '—';
-  $('statMonthlyVisitors').textContent = visitorStats.monthly || '—';
+async function loadAnalytics() {
+  try {
+    const { data: logs, error } = await sb.from('visitor_logs').select('*');
+    if (error) throw error;
+    
+    const now = new Date();
+    const oneDay = 24 * 60 * 60 * 1000;
+    
+    let total = 0, unique = 0, daily = 0, weekly = 0, monthly = 0;
+    const uniqueIPs = new Set();
+    
+    (logs || []).forEach(log => {
+      total++;
+      // We don't have IP, so we'll use user_agent + country as a proxy for unique visitors
+      uniqueIPs.add((log.user_agent || '') + (log.country || ''));
+      
+      const visited = new Date(log.visited_at);
+      const diffDays = (now - visited) / oneDay;
+      
+      if (diffDays <= 1) daily++;
+      if (diffDays <= 7) weekly++;
+      if (diffDays <= 30) monthly++;
+    });
+    
+    visitorStats = { total, unique: uniqueIPs.size, daily, weekly, monthly };
+  } catch (err) {
+    console.warn('Failed to load visitor logs:', err);
+  }
+
+  $('statTotalVisitors').textContent   = visitorStats.total   || '0';
+  $('statUniqueVisitors').textContent  = visitorStats.unique  || '0';
+  $('statDailyVisitors').textContent   = visitorStats.daily   || '0';
+  $('statWeeklyVisitors').textContent  = visitorStats.weekly  || '0';
+  $('statMonthlyVisitors').textContent = visitorStats.monthly || '0';
+  $('statVisitors').textContent        = visitorStats.total   || '0';
 
   renderTrafficChart();
   renderMostViewed();
