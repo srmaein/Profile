@@ -1,0 +1,79 @@
+{
+  "projects": [
+    {
+      "id": "hospital-management-system",
+      "title": "Hospital Management System",
+      "description": "Full-Stack SaaS hospital management system built with multi-tenancy architecture. Features role-based access for Doctor, Staff, Patient, and Super Admin (System Owner). Includes an integrated Medical AI Chatbot powered by LLaMA 3 via LM Studio for a streamlined user experience. Built with Next.js frontend, Nest.js backend, PostgreSQL database, Docker containerisation, JWT authentication, and a Swagger-documented REST API.",
+      "category": "web",
+      "tags": ["Next.js", "Nest.js", "PostgreSQL", "Docker", "JWT", "AI Chatbot", "Swagger", "SaaS"],
+      "video": "",
+      "github": "",
+      "live": "",
+      "image": "",
+      "download": "",
+      "featured": true,
+      "published": true,
+      "date": "2024-12-01"
+    },
+    {
+      "id": "online-learning-platform",
+      "title": "Online Learning Platform",
+      "description": "Full-stack web-based online learning platform built as a university web technologies project. Features role-based access for Student, Teacher, and Admin. Students can browse and enrol in courses, complete lessons, take quizzes, and view their results. Teachers can create and manage content. Admins control the entire platform. Built with PHP, MySQL, HTML, CSS, and JavaScript.",
+      "category": "web",
+      "tags": ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "Full-Stack", "MVC"],
+      "video": "",
+      "github": "",
+      "live": "",
+      "image": "",
+      "download": "",
+      "featured": true,
+      "published": true,
+      "date": "2024-06-01"
+    },
+    {
+      "id": "finance-statistics-dashboard",
+      "title": "Finance Statistics Dashboard",
+      "description": "Interactive finance dashboard developed during my internship at FiroTech. Features custom-built charts for real-time financial statistics visualisation. Developed a responsive frontend web interface and assisted the backend developer during the frontend integration phase. Performed unit testing and smoke testing following proper test case documentation under Agile methodologies.",
+      "category": "web",
+      "tags": ["HTML", "CSS", "JavaScript", "Charts.js", "Finance", "Agile"],
+      "video": "",
+      "github": "",
+      "live": "",
+      "image": "",
+      "download": "",
+      "featured": false,
+      "published": true,
+      "date": "2025-10-01"
+    },
+    {
+      "id": "android-testing-analysis",
+      "title": "Android App Testing Analysis",
+      "description": "Thesis research project analysing Android application testing methodologies for best performance compliance with Google Play Store rules and guidelines. The study covers unit testing, smoke testing, regression testing, and UI automation strategies. Provides a comprehensive comparison of testing tools and techniques used in production-grade Android development.",
+      "category": "mobile",
+      "tags": ["Android", "SQA", "Testing", "Google Play", "Thesis", "Automation"],
+      "video": "",
+      "github": "",
+      "live": "",
+      "image": "",
+      "download": "",
+      "featured": false,
+      "published": true,
+      "date": "2025-01-01"
+    },
+    {
+      "id": "medical-ai-chatbot",
+      "title": "Medical AI Chatbot (LLaMA 3)",
+      "description": "AI-powered conversational chatbot integrated into the Hospital Management System. Runs LLaMA 3 locally via LM Studio for offline, privacy-first AI inference. Provides intelligent responses for patient queries, appointment scheduling guidance, and medication information. Frontend chatbot interface developed with Next.js and connected to a custom Nest.js API layer.",
+      "category": "ai",
+      "tags": ["LLaMA 3", "LM Studio", "AI Agents", "NLP", "Healthcare", "Next.js", "Nest.js"],
+      "video": "",
+      "github": "",
+      "live": "",
+      "image": "",
+      "download": "",
+      "featured": true,
+      "published": true,
+      "date": "2024-11-01"
+    }
+  ]
+}

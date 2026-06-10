@@ -1,0 +1,174 @@
+# =====================================================================
+#  Decap CMS Configuration — Sadman Rahman Maein Portfolio
+#  Docs: https://decapcms.org/docs/
+#
+#  SETUP INSTRUCTIONS (read before deploying):
+#  1. Change `repo` below to your actual GitHub username/repo-name
+#  2. Go to GitHub → Settings → Developer settings → OAuth Apps
+#  3. Create a new OAuth App:
+#       Homepage URL:         https://USERNAME.github.io
+#       Authorization callback URL: https://api.netlify.com/auth/done
+#  4. Copy the Client ID + generate a Client Secret
+#  5. Go to https://app.netlify.com → Sites → Add new site → Deploy manually
+#     (upload any file), then go to Site settings → Identity → Enable Identity
+#  6. Under Identity → External providers, enable GitHub and paste
+#     your OAuth Client ID and Secret
+#  7. Under Identity → Registration, set to "Invite only"
+#  8. Invite yourself under Identity → Users
+#  9. Now visit  https://YOUR-SITE.github.io/admin/  and log in via GitHub
+# =====================================================================
+
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME   # <-- CHANGE THIS
+  branch: main
+  base_url: https://api.netlify.com            # Netlify OAuth proxy
+
+# Uncomment to enable local testing (run: npx decap-server)
+# local_backend: true
+
+# ── Media ──────────────────────────────────────────────────────────
+media_folder:  "assets/images/projects"
+public_folder: "/assets/images/projects"
+
+# ── Site URL ────────────────────────────────────────────────────────
+site_url: https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME
+
+# ── Display Settings ────────────────────────────────────────────────
+locale: en
+show_preview_links: false
+
+# ── Collections ─────────────────────────────────────────────────────
+collections:
+
+  # ── Projects (edits data/projects.json) ────────────────────────
+  - name: projects_file
+    label: "Projects"
+    description: "Add, edit or remove portfolio projects. Changes are committed directly to GitHub."
+    files:
+      - name: projects_list
+        label: "All Projects"
+        file: "data/projects.json"
+        description: "Edit the complete projects list stored in data/projects.json"
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: list
+            label_singular: "Project"
+            summary: "{{fields.title}} · {{fields.category}}"
+            fields:
+
+              - label: "ID (slug)"
+                name: id
+                widget: string
+                hint: "Unique lowercase slug e.g. my-cool-project. No spaces."
+                pattern: ['^[a-z0-9-]+$', "Lowercase letters, numbers and hyphens only"]
+
+              - label: "Title"
+                name: title
+                widget: string
+                hint: "Project display name"
+
+              - label: "Short Description"
+                name: description
+                widget: text
+                hint: "A paragraph describing the project. Shown in modal and card."
+
+              - label: "Category"
+                name: category
+                widget: select
+                options:
+                  - { label: "Web Development", value: web }
+                  - { label: "AI / Machine Learning", value: ai }
+                  - { label: "Mobile", value: mobile }
+                  - { label: "Other", value: other }
+                default: web
+
+              - label: "Tags"
+                name: tags
+                widget: list
+                default: []
+                hint: "Comma-separated technology tags e.g. React, Node.js, Docker"
+
+              - label: "Thumbnail Image"
+                name: image
+                widget: image
+                required: false
+                hint: "Upload a 16:9 thumbnail. Stored in assets/images/projects/"
+
+              - label: "Video / Demo URL"
+                name: video
+                widget: string
+                required: false
+                hint: "YouTube link (e.g. https://youtu.be/xxxx), MP4 URL, or any demo URL"
+
+              - label: "GitHub Repository URL"
+                name: github
+                widget: string
+                required: false
+                hint: "Full URL e.g. https://github.com/username/repo"
+
+              - label: "Live Demo URL"
+                name: live
+                widget: string
+                required: false
+                hint: "Deployed site URL"
+
+              - label: "Download Link"
+                name: download
+                widget: string
+                required: false
+                hint: "Optional direct download URL (APK, ZIP, PDF report, etc.)"
+
+              - label: "Featured Project"
+                name: featured
+                widget: boolean
+                default: false
+                hint: "Featured projects appear first in the grid"
+
+              - label: "Date"
+                name: date
+                widget: datetime
+                date_format: "YYYY-MM-DD"
+                time_format: false
+                hint: "Project completion or start date"
+
+  # ── Site Settings ───────────────────────────────────────────────
+  - name: settings
+    label: "Site Settings"
+    files:
+      - name: site_meta
+        label: "Portfolio Info"
+        file: "data/settings.json"
+        description: "Update your personal info, social links, and hero text"
+        fields:
+          - label: "Full Name"
+            name: name
+            widget: string
+            default: "A.K.M Sadman Rahman Maein"
+
+          - label: "Job Title / Tagline"
+            name: tagline
+            widget: string
+            default: "Computer Engineer · Full-Stack Developer"
+
+          - label: "Email Address"
+            name: email
+            widget: string
+
+          - label: "Phone Number"
+            name: phone
+            widget: string
+
+          - label: "LinkedIn URL"
+            name: linkedin
+            widget: string
+
+          - label: "GitHub Profile URL"
+            name: github
+            widget: string
+
+          - label: "Profile Photo"
+            name: avatar
+            widget: image
+            required: false

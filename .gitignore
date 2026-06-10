@@ -1,0 +1,11 @@
+# Local env overrides (js/supabase-config.js is committed for GitHub Pages deploy)
+.env
+.env.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+
+.vercel
+.env*

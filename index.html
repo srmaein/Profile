@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sadman Rahman Maein · Computer Engineer · AIUB</title>
+  <meta name="description" content="Portfolio of A.K.M Sadman Rahman Maein — Computer Engineer, Full-Stack Developer & Software Engineer at AIUB.">
+  <meta property="og:title" content="Sadman Rahman Maein · Portfolio">
+  <meta property="og:description" content="Computer Engineer | Full-Stack Developer | AIUB">
+  <meta property="og:image" content="assets/images/profile.jpg">
+  <link rel="icon" href="assets/images/profile.jpg" type="image/jpeg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div id="cursorRing"></div>
+  <div id="cursorDot"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div id="scrollProgress"></div>
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="pre-logo">
+        <span class="pre-bracket">&lt;</span>
+        <span class="pre-name">SADMAN</span>
+        <span class="pre-bracket">/&gt;</span>
+      </div>
+      <div class="pre-bar"><div class="pre-bar-fill"></div></div>
+      <span class="pre-sub">Initialising portfolio...</span>
+    </div>
+  </div>
+
+  <!-- MOBILE OVERLAY -->
+  <div id="navOverlay"></div>
+
+  <!-- ═══════ NAVBAR ═══════ -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-brand">
+        <span class="brand-bracket">&lt;</span>
+        <span class="brand-text">SADMAN</span>
+        <span class="brand-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home"      class="nav-link active">Home</a></li>
+        <li><a href="#about"     class="nav-link">About</a></li>
+        <li><a href="#skills"    class="nav-link">Skills</a></li>
+        <li><a href="#experience"class="nav-link">Experience</a></li>
+        <li><a href="#projects"  class="nav-link">Projects</a></li>
+        <li><a href="#contact"   class="nav-link">Contact</a></li>
+        <li>
+          <a href="admin/" class="nav-link nav-cms-btn" title="CMS Admin">
+            <i class="fas fa-lock"></i> Admin
+          </a>
+        </li>
+      </ul>
+      <div class="nav-actions">
+        <button id="themeToggle" aria-label="Toggle theme">
+          <i id="themeIcon" class="fas fa-moon"></i>
+        </button>
+        <button id="hamburger" class="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════ HERO ═══════ -->
+  <section id="home" class="hero">
+    <canvas id="particles"></canvas>
+    <div class="hero-bg"></div>
+    <div class="hero-grid-overlay"></div>
+
+    <div class="hero-container">
+      <div class="hero-content" data-animate>
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>Available for opportunities</span>
+        </div>
+
+        <div class="hero-greeting">Hello, World! 👋 I'm</div>
+
+        <h1 class="hero-name">
+          <span class="name-line">A.K.M Sadman</span>
+          <span class="name-line accent-line">Rahman Maein</span>
+        </h1>
+
+        <div class="hero-role">
+          <span class="role-static">I build </span>
+          <span id="typingText" class="role-typed"></span>
+          <span class="cursor-blink">|</span>
+        </div>
+
+        <p class="hero-desc">
+          Computer Science &amp; Engineering student at <strong>AIUB</strong> · Major in
+          Software Engineering &amp; Information Security · Passionate about building
+          scalable systems, AI-powered solutions, and clean full-stack applications.
+        </p>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num" data-target="5">0+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-target="3">0+</span>
+            <span class="stat-label">Years Learning</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-target="10">0+</span>
+            <span class="stat-label">Technologies</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-target="2">0+</span>
+            <span class="stat-label">Certifications</span>
+          </div>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fas fa-code"></i> View Projects
+          </a>
+          <a href="assets/resume.pdf" download class="btn btn-outline">
+            <i class="fas fa-file-arrow-down"></i> Download CV
+          </a>
+          <a href="#contact" class="btn btn-ghost">
+            <i class="fas fa-paper-plane"></i> Hire Me
+          </a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://www.linkedin.com/in/sadmanrahmanmaein/" target="_blank" class="social-btn" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/" target="_blank" class="social-btn" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="mailto:smeainrahman@gmail.com" class="social-btn" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="tel:+8801754393923" class="social-btn" aria-label="Phone">
+            <i class="fas fa-phone"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-animate>
+        <div class="orbit-wrapper">
+          <div class="orbit-ring ring-1">
+            <div class="orbit-badge" style="--angle:0deg"><i class="fab fa-python"></i></div>
+            <div class="orbit-badge" style="--angle:72deg"><i class="fab fa-java"></i></div>
+            <div class="orbit-badge" style="--angle:144deg"><i class="fab fa-react"></i></div>
+            <div class="orbit-badge" style="--angle:216deg"><i class="fab fa-node-js"></i></div>
+            <div class="orbit-badge" style="--angle:288deg"><i class="fas fa-database"></i></div>
+          </div>
+          <div class="orbit-ring ring-2">
+            <div class="orbit-badge ob2" style="--angle:36deg"><i class="fab fa-docker"></i></div>
+            <div class="orbit-badge ob2" style="--angle:108deg"><i class="fab fa-git-alt"></i></div>
+            <div class="orbit-badge ob2" style="--angle:180deg"><i class="fab fa-html5"></i></div>
+            <div class="orbit-badge ob2" style="--angle:252deg"><i class="fab fa-css3-alt"></i></div>
+            <div class="orbit-badge ob2" style="--angle:324deg"><i class="fab fa-php"></i></div>
+          </div>
+          <div class="orbit-center">
+            <img src="assets/images/profile.jpg" alt="Sadman Rahman Maein" class="hero-avatar" loading="lazy">
+            <div class="avatar-ring"></div>
+            <div class="avatar-glow"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"><div class="scroll-dot"></div></div>
+    </div>
+  </section>
+
+  <!-- ═══════ ABOUT ═══════ -->
+  <section id="about" class="about section">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-tag">// get_to_know_me()</span>
+        <h2 class="section-title">About <span class="accent">Me</span></h2>
+        <p class="section-sub">A bit about who I am and what drives me</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-photo-wrap" data-animate>
+          <div class="photo-card tilt-card">
+            <img src="assets/images/profile.jpg" alt="Sadman Rahman Maein at AIUB" loading="lazy">
+            <div class="photo-overlay">
+              <span>AIUB Campus · 2024</span>
+            </div>
+          </div>
+          <div class="photo-tag photo-tag-1">
+            <i class="fas fa-graduation-cap"></i> CSE Student
+          </div>
+          <div class="photo-tag photo-tag-2">
+            <i class="fas fa-map-marker-alt"></i> Narayanganj, BD
+          </div>
+        </div>
+
+        <div class="about-content" data-animate>
+          <div class="about-intro">
+            <span class="mono-tag">&lt;about&gt;</span>
+            <p>
+              I'm <strong>A.K.M Sadman Rahman Maein</strong>, a Computer Science &amp; Engineering
+              student at the American International University–Bangladesh (AIUB), majoring in
+              <em>Software Engineering and Information Security</em>.
+            </p>
+            <p>
+              My journey into tech began with a perfect score in my SSC exams — a foundation that
+              built my love for problem-solving. Today I build full-stack web applications, explore
+              AI integration, and write clean, scalable code that makes a difference.
+            </p>
+            <p>
+              I've had hands-on experience as a <strong>Software Developer Intern</strong> at
+              FiroTech, where I developed finance-focused frontends and assisted in backend
+              integration using agile methodologies.
+            </p>
+            <span class="mono-tag">&lt;/about&gt;</span>
+          </div>
+
+          <div class="about-beliefs">
+            <div class="belief-card tilt-card" data-animate>
+              <i class="fas fa-code-branch"></i>
+              <h4>Clean Code Advocate</h4>
+              <p>Readability and maintainability are non-negotiable in every line I write.</p>
+            </div>
+            <div class="belief-card tilt-card" data-animate>
+              <i class="fas fa-brain"></i>
+              <h4>AI Enthusiast</h4>
+              <p>Integrating intelligent systems into real-world products excites me deeply.</p>
+            </div>
+            <div class="belief-card tilt-card" data-animate>
+              <i class="fas fa-users"></i>
+              <h4>Team First</h4>
+              <p>Great software is built by collaborative teams, not lone heroes.</p>
+            </div>
+          </div>
+
+          <div class="about-meta">
+            <div class="meta-item">
+              <span class="meta-label"><i class="fas fa-id-card"></i> Student ID</span>
+              <span class="meta-value">21-44479-1</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label"><i class="fas fa-university"></i> University</span>
+              <span class="meta-value">AIUB, Dhaka</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label"><i class="fas fa-chart-bar"></i> CGPA</span>
+              <span class="meta-value">3.11 / 4.00</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label"><i class="fas fa-envelope"></i> Email</span>
+              <span class="meta-value">smeainrahman@gmail.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ SKILLS ═══════ -->
+  <section id="skills" class="skills section">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-tag">// skill_stack.map()</span>
+        <h2 class="section-title">Technical <span class="accent">Skills</span></h2>
+        <p class="section-sub">Technologies I work with and proficiency levels</p>
+      </div>
+
+      <div class="skills-layout">
+        <div class="skill-block" data-animate>
+          <h3 class="skill-block-title"><i class="fas fa-code"></i> Programming Languages</h3>
+          <div class="skill-bars">
+            <div class="skill-item">
+              <div class="skill-info"><span>Java</span><span>85%</span></div>
+              <div class="skill-track"><div class="bar-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>JavaScript / Next.js</span><span>80%</span></div>
+              <div class="skill-track"><div class="bar-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>PHP / HTML / CSS</span><span>85%</span></div>
+              <div class="skill-track"><div class="bar-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>C / C++</span><span>75%</span></div>
+              <div class="skill-track"><div class="bar-fill" data-width="75"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>C# / ASP.NET</span><span>65%</span></div>
+              <div class="skill-track"><div class="bar-fill" data-width="65"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>R (Data Analysis)</span><span>60%</span></div>
+              <div class="skill-track"><div class="bar-fill" data-width="60"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-block" data-animate>
+          <h3 class="skill-block-title"><i class="fas fa-layer-group"></i> Frameworks &amp; Tools</h3>
+          <div class="skill-bars">
+            <div class="skill-item">
+              <div class="skill-info"><span>Next.js / Nest.js</span><span>80%</span></div>
+              <div class="skill-track"><div class="bar-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Docker</span><span>70%</span></div>
+              <div class="skill-track"><div class="bar-fill" data-width="70"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Git / Version Control</span><span>80%</span></div>
+              <div class="skill-track"><div class="bar-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>PostgreSQL / MySQL</span><span>78%</span></div>
+              <div class="skill-track"><div class="bar-fill" data-width="78"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Swagger API / REST</span><span>75%</span></div>
+              <div class="skill-track"><div class="bar-fill" data-width="75"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>JWT / Auth Systems</span><span>70%</span></div>
+              <div class="skill-track"><div class="bar-fill" data-width="70"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-block tags-block" data-animate>
+          <h3 class="skill-block-title"><i class="fas fa-tags"></i> Tech Tags</h3>
+          <div class="tech-tag-cloud">
+            <span class="tech-tag tag-primary">Next.js</span>
+            <span class="tech-tag tag-secondary">Nest.js</span>
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag tag-primary">PostgreSQL</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag tag-secondary">JWT</span>
+            <span class="tech-tag">Swagger</span>
+            <span class="tech-tag tag-primary">AI/ML</span>
+            <span class="tech-tag">LLaMA 3</span>
+            <span class="tech-tag tag-secondary">LM Studio</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">REST API</span>
+            <span class="tech-tag tag-primary">Git</span>
+            <span class="tech-tag">C++ / C</span>
+            <span class="tech-tag tag-secondary">PHP</span>
+            <span class="tech-tag">VS Code</span>
+            <span class="tech-tag">Xcode</span>
+            <span class="tech-tag tag-primary">ASP.NET</span>
+            <span class="tech-tag">Cisco Networking</span>
+            <span class="tech-tag tag-secondary">Agile/Scrum</span>
+            <span class="tech-tag">Unit Testing</span>
+            <span class="tech-tag">CI/CD</span>
+          </div>
+        </div>
+
+        <div class="skill-block" data-animate>
+          <h3 class="skill-block-title"><i class="fas fa-user-tie"></i> Soft Skills</h3>
+          <div class="soft-skills-grid">
+            <div class="soft-skill-item"><i class="fas fa-sync-alt"></i><span>Adaptive Learner</span></div>
+            <div class="soft-skill-item"><i class="fas fa-users"></i><span>Team Player</span></div>
+            <div class="soft-skill-item"><i class="fas fa-lightbulb"></i><span>Analytical Thinker</span></div>
+            <div class="soft-skill-item"><i class="fas fa-bolt"></i><span>Quick Learner</span></div>
+            <div class="soft-skill-item"><i class="fas fa-clock"></i><span>Time Management</span></div>
+            <div class="soft-skill-item"><i class="fas fa-project-diagram"></i><span>Project Management</span></div>
+            <div class="soft-skill-item"><i class="fas fa-crown"></i><span>Leadership</span></div>
+            <div class="soft-skill-item"><i class="fas fa-search"></i><span>Problem Solving</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ EXPERIENCE ═══════ -->
+  <section id="experience" class="experience section">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-tag">// career.timeline()</span>
+        <h2 class="section-title">Experience &amp; <span class="accent">Education</span></h2>
+        <p class="section-sub">My journey through academia and the industry</p>
+      </div>
+
+      <div class="timeline">
+
+        <div class="tl-item tl-right" data-animate>
+          <div class="tl-icon work"><i class="fas fa-briefcase"></i></div>
+          <div class="tl-card tilt-card">
+            <div class="tl-meta">
+              <span class="tl-date"><i class="fas fa-calendar"></i> Oct 2025 – Dec 2024</span>
+              <span class="tl-type work-badge">Work</span>
+            </div>
+            <h3>Software Developer <span class="accent">(Intern)</span></h3>
+            <h4><a href="#" class="tl-company">FiroTech — Finance &amp; Tech Solutions</a></h4>
+            <ul class="tl-bullets">
+              <li>Developed frontend web interface for a finance-focused web application.</li>
+              <li>Built interactive custom charts for financial statistics visualisation.</li>
+              <li>Assisted backend developer during frontend integration phase.</li>
+              <li>Performed unit testing &amp; smoke testing with proper test case documentation.</li>
+              <li>Followed Agile methodologies throughout the SDLC.</li>
+            </ul>
+            <div class="tl-tags">
+              <span>HTML/CSS</span><span>JavaScript</span><span>Charts.js</span><span>Agile</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item tl-left" data-animate>
+          <div class="tl-icon edu"><i class="fas fa-graduation-cap"></i></div>
+          <div class="tl-card tilt-card">
+            <div class="tl-meta">
+              <span class="tl-date"><i class="fas fa-calendar"></i> Feb 2021 – Present</span>
+              <span class="tl-type edu-badge">Education</span>
+            </div>
+            <h3>BSc in Computer Science &amp; Engineering</h3>
+            <h4>American International University–Bangladesh (AIUB)</h4>
+            <ul class="tl-bullets">
+              <li>Major: Software Engineering &amp; Information Security</li>
+              <li>Thesis: "Android Application Testing Analysis for Best Performance by Google Rules and Play"</li>
+              <li>CGPA: 3.11 / 4.00</li>
+            </ul>
+            <div class="tl-tags">
+              <span>Software Eng.</span><span>Info. Security</span><span>Android</span><span>SQA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item tl-right" data-animate>
+          <div class="tl-icon edu"><i class="fas fa-school"></i></div>
+          <div class="tl-card tilt-card">
+            <div class="tl-meta">
+              <span class="tl-date"><i class="fas fa-calendar"></i> Jul 2018 – Dec 2020</span>
+              <span class="tl-type edu-badge">Education</span>
+            </div>
+            <h3>Higher Secondary Certificate (HSC)</h3>
+            <h4>Dr. Mahbubur Rahman Mollah College</h4>
+            <ul class="tl-bullets">
+              <li>Science Background</li>
+              <li>CGPA: 4.83 / 5.00</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item tl-left" data-animate>
+          <div class="tl-icon edu"><i class="fas fa-book"></i></div>
+          <div class="tl-card tilt-card">
+            <div class="tl-meta">
+              <span class="tl-date"><i class="fas fa-calendar"></i> Jan 2015 – Feb 2017</span>
+              <span class="tl-type edu-badge">Education</span>
+            </div>
+            <h3>Secondary School Certificate (SSC)</h3>
+            <h4>Bright High School</h4>
+            <ul class="tl-bullets">
+              <li>Science Background</li>
+              <li>CGPA: 5.00 / 5.00 (Perfect Score)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="tl-item tl-right" data-animate>
+          <div class="tl-icon cert"><i class="fas fa-certificate"></i></div>
+          <div class="tl-card tilt-card">
+            <div class="tl-meta">
+              <span class="tl-date"><i class="fas fa-calendar"></i> 6 May 2021</span>
+              <span class="tl-type cert-badge">Certificate</span>
+            </div>
+            <h3>IT Essentials: PC Hardware &amp; Software</h3>
+            <h4>Cisco Networking Academy · Dhaka</h4>
+            <ul class="tl-bullets">
+              <li>Covered PC assembly, OS installation, troubleshooting, networking basics.</li>
+            </ul>
+            <div class="tl-tags"><span>Cisco</span><span>Networking</span><span>PC Hardware</span></div>
+          </div>
+        </div>
+
+        <div class="tl-item tl-left" data-animate>
+          <div class="tl-icon cert"><i class="fas fa-robot"></i></div>
+          <div class="tl-card tilt-card">
+            <div class="tl-meta">
+              <span class="tl-date"><i class="fas fa-calendar"></i> 6 Sep 2025</span>
+              <span class="tl-type cert-badge">Certificate</span>
+            </div>
+            <h3>AI Agents For Beginners</h3>
+            <h4>Simplilearn · SkillUP</h4>
+            <ul class="tl-bullets">
+              <li>Introduction to AI agents, autonomous systems, and prompt engineering.</li>
+            </ul>
+            <div class="tl-tags"><span>AI</span><span>Agents</span><span>Simplilearn</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ PROJECTS ═══════ -->
+  <section id="projects" class="projects section">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-tag">// projects.load()</span>
+        <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+        <p class="section-sub">A showcase of what I've built — updated from the CMS or project data</p>
+      </div>
+
+      <!-- Search + Filter -->
+      <div class="project-controls" data-animate>
+        <div class="search-wrap">
+          <i class="fas fa-search"></i>
+          <input type="text" id="projectSearch" placeholder="Search projects..." autocomplete="off">
+        </div>
+        <div class="filter-btns">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="ai">AI / ML</button>
+          <button class="filter-btn" data-filter="mobile">Mobile</button>
+          <button class="filter-btn" data-filter="other">Other</button>
+        </div>
+      </div>
+
+      <!-- Projects Grid (dynamically populated by JS) -->
+      <div class="projects-grid" id="projectsGrid">
+        <div class="projects-loading" id="projectsLoading">
+          <div class="loading-spinner"></div>
+          <p>Loading projects...</p>
+        </div>
+      </div>
+
+      <div class="projects-empty" id="projectsEmpty" style="display:none;">
+        <i class="fas fa-folder-open"></i>
+        <p>No projects found. Try a different filter or search term.</p>
+      </div>
+
+      <div class="projects-cms-hint" data-animate>
+        <i class="fas fa-info-circle"></i>
+        Projects load from Supabase — publish new ones at
+        <a href="admin/" target="_blank">Admin CMS</a>.
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CONTACT ═══════ -->
+  <section id="contact" class="contact section">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-tag">// send_message()</span>
+        <h2 class="section-title">Get In <span class="accent">Touch</span></h2>
+        <p class="section-sub">Have a project in mind? Let's build something great together.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info" data-animate>
+          <h3>Let's Talk!</h3>
+          <p>
+            Whether you have a project idea, a job opportunity, or just want to say hello —
+            my inbox is always open. I'll respond within 24 hours.
+          </p>
+
+          <div class="contact-details">
+            <a href="mailto:smeainrahman@gmail.com" class="contact-detail-item">
+              <div class="detail-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <span class="detail-label">Email</span>
+                <span class="detail-value">smeainrahman@gmail.com</span>
+              </div>
+            </a>
+            <a href="tel:+8801754393923" class="contact-detail-item">
+              <div class="detail-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <span class="detail-label">Phone</span>
+                <span class="detail-value">+880 1754-393923</span>
+              </div>
+            </a>
+            <div class="contact-detail-item">
+              <div class="detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <span class="detail-label">Location</span>
+                <span class="detail-value">Narayanganj, Bangladesh</span>
+              </div>
+            </div>
+            <a href="https://www.linkedin.com/in/sadmanrahmanmaein/" target="_blank" class="contact-detail-item">
+              <div class="detail-icon"><i class="fab fa-linkedin-in"></i></div>
+              <div>
+                <span class="detail-label">LinkedIn</span>
+                <span class="detail-value">sadmanrahmanmaein</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap" data-animate>
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Project enquiry / Collaboration / etc.">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or opportunity..."></textarea>
+            </div>
+            <div id="formFeedback" class="form-feedback"></div>
+            <button type="submit" id="submitBtn" class="btn btn-primary btn-full">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-brand footer-logo">
+            <span class="brand-bracket">&lt;</span>
+            <span class="brand-text">SADMAN</span>
+            <span class="brand-bracket">/&gt;</span>
+          </div>
+          <p>Computer Engineer · Full-Stack Developer · AIUB · Bangladesh</p>
+          <div class="footer-socials">
+            <a href="https://www.linkedin.com/in/sadmanrahmanmaein/" target="_blank" class="social-btn" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/" target="_blank" class="social-btn" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:smeainrahman@gmail.com" class="social-btn" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="#projects" data-filter="web">Web Projects</a></li>
+            <li><a href="#projects" data-filter="ai">AI / ML</a></li>
+            <li><a href="#projects" data-filter="mobile">Mobile</a></li>
+            <li><a href="admin/">CMS Admin</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:smeainrahman@gmail.com">smeainrahman@gmail.com</a></li>
+            <li><a href="tel:+8801754393923">+880 1754-393923</a></li>
+            <li><a href="assets/resume.pdf" download>Download CV</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 A.K.M Sadman Rahman Maein · All rights reserved</p>
+        <p>Built with <i class="fas fa-heart accent"></i> &amp; <a href="admin/">Supabase CMS</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button id="backTop" class="back-top" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- ═══════ PROJECT MODAL ═══════ -->
+  <div id="projectModal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Project Details">
+    <div class="modal-panel">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-body" id="modalBody">
+        <!-- dynamically filled by JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/projects-api.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+# Optional: deploy via Actions with secrets instead of committing js/supabase-config.js.
+# Repo Settings → Pages → Source: GitHub Actions. Add secrets: SUPABASE_URL, SUPABASE_ANON_KEY.
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Inject Supabase config from secrets
+        if: ${{ secrets.SUPABASE_URL != '' && secrets.SUPABASE_ANON_KEY != '' }}
+        run: |
+          cat > js/supabase-config.js <<'EOF'
+          window.SUPABASE_CONFIG = {
+            SUPABASE_URL: '${{ secrets.SUPABASE_URL }}',
+            SUPABASE_ANON_KEY: '${{ secrets.SUPABASE_ANON_KEY }}',
+            siteBase: '/Profile/',
+            DEFAULT_ADMIN_EMAIL: '${{ secrets.ADMIN_EMAIL }}',
+            DEFAULT_ADMIN_PASSWORD: '${{ secrets.ADMIN_PASSWORD }}',
+            AUTO_LOGIN: false,
+          };
+          EOF
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4
