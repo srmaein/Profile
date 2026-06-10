@@ -560,8 +560,6 @@ async function saveProject(e) {
       thumbnail_url: imageUrl,
       featured:      $('fFeatured').checked,
       published:     $('fEnabled').checked,
-      enabled:       $('fEnabled').checked,
-      date:          dateVal || new Date().toISOString().split('T')[0],
       updated_at:    new Date().toISOString(),
     };
 
