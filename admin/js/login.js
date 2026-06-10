@@ -81,6 +81,7 @@ async function performLogin(email, password) {
     }, 600);
 
   } catch (err) {
+    $('loadingOverlay').hidden = true;
     showLoginError(err.message || 'Sign in failed. Check your credentials.');
     btn.disabled = false;
     btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In';
