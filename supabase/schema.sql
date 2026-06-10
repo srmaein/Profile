@@ -63,6 +63,20 @@ CREATE TABLE IF NOT EXISTS public.projects (
   updated_at    TIMESTAMPTZ  NOT NULL DEFAULT now()
 );
 
+-- Ensure columns exist for existing tables (v2 upgrade)
+ALTER TABLE public.projects 
+  ADD COLUMN IF NOT EXISTS description TEXT,
+  ADD COLUMN IF NOT EXISTS thumbnail_url TEXT,
+  ADD COLUMN IF NOT EXISTS video_url TEXT,
+  ADD COLUMN IF NOT EXISTS github_url TEXT,
+  ADD COLUMN IF NOT EXISTS live_url TEXT,
+  ADD COLUMN IF NOT EXISTS download_url TEXT,
+  ADD COLUMN IF NOT EXISTS category TEXT NOT NULL DEFAULT 'other',
+  ADD COLUMN IF NOT EXISTS tags TEXT[] NOT NULL DEFAULT '{}',
+  ADD COLUMN IF NOT EXISTS featured BOOLEAN NOT NULL DEFAULT false,
+  ADD COLUMN IF NOT EXISTS published BOOLEAN NOT NULL DEFAULT false,
+  ADD COLUMN IF NOT EXISTS date DATE;
+
 -- Indexes
 CREATE INDEX IF NOT EXISTS idx_projects_published ON public.projects (published) WHERE published = true;
 CREATE INDEX IF NOT EXISTS idx_projects_category  ON public.projects (category);
